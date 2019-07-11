@@ -147,10 +147,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.soc.manufacturer=QTI \
     ro.soc.model=SM6225
 
-# SSR
-PRODUCT_SYSTEM_PROPERTIES += \
-    persist.vendor.ssr.restart_level=ALL_ENABLE
-
 # Storage.xml moment
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.sys.binary_xml=false
