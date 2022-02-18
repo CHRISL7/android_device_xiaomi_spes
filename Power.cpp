@@ -31,7 +31,6 @@
 
 #include "Power.h"
 
-#include <android-base/file.h>
 #include <android-base/logging.h>
 
 #include <aidl/android/hardware/power/BnPower.h>
@@ -73,13 +72,7 @@ ndk::ScopedAStatus Power::setMode(Mode type, bool enabled) {
 #endif
 
     switch(type){
-#ifdef TAP_TO_WAKE_NODE
         case Mode::DOUBLE_TAP_TO_WAKE:
-            ::android::base::WriteStringToFile(enabled ? "1" : "0", TAP_TO_WAKE_NODE, true);
-            break;
-#else
-        case Mode::DOUBLE_TAP_TO_WAKE:
-#endif
         case Mode::LOW_POWER:
         case Mode::LAUNCH:
         case Mode::EXPENSIVE_RENDERING:
@@ -118,9 +111,6 @@ ndk::ScopedAStatus Power::isModeSupported(Mode type, bool* _aidl_return) {
 #endif
 
     switch(type){
-#ifdef TAP_TO_WAKE_NODE
-        case Mode::DOUBLE_TAP_TO_WAKE:
-#endif
         case Mode::INTERACTIVE:
         case Mode::SUSTAINED_PERFORMANCE:
         case Mode::FIXED_PERFORMANCE:
