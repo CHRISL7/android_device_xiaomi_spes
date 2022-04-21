@@ -79,6 +79,22 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
     frameworks/native/data/etc/android.hardware.camera.raw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.raw.xml
 
+# Device Settings
+PRODUCT_PACKAGES += \
+    XiaomiParts
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/parts/init.xiaomiparts.rc:$(TARGET_COPY_OUT_SYSTEM)/etc/init/init.xiaomiparts.rc \
+    $(LOCAL_PATH)/parts/init.xiaomiparts.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.xiaomiparts.rc \
+    $(LOCAL_PATH)/parts/privapp-permissions-parts.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-parts.xml
+
+PRODUCT_VENDOR_PROPERTIES += \
+    ro.audio.soundfx.dirac=true \
+    persist.audio.dirac.speaker=true \
+    persist.dirac.acs.controller=qem \
+    persist.dirac.acs.storeSettings=1 \
+    persist.dirac.acs.ignore_error=1
+
 # Display
 PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0-impl-qti-display \

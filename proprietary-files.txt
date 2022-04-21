@@ -80,6 +80,11 @@ vendor/lib/rfsa/adsp/misound_res_spk.bin
 vendor/lib/hw/com.dsi.ant@1.0-impl.so
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
+# Audio Dirac
+lib/libDiracAPI_SHARED.so:vendor/lib/libDiracAPI_SHARED.so
+lib/soundfx/libdirac.so:vendor/lib/soundfx/libdirac.so
+vendor/etc/diracmobile.config
+
 # Audio FX
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libmisoundfx.so
