@@ -167,3 +167,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.data.iwlan.enable=true \
     ro.telephony.iwlan_operation_mode=legacy
+
+# Wi-Fi
+PRODUCT_VENDOR_PROPERTIES += \
+    wifi.aware.interface=wifi-aware0
