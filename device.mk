@@ -200,6 +200,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/perf/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
 # QC common
+$(call inherit-product, device/qcom/common/common.mk)
+
 TARGET_COMMON_QTI_COMPONENTS := all
 TARGET_NFC_SKU := spens
 
