@@ -225,3 +225,8 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Inherit from the proprietary version
 include vendor/xiaomi/spes/BoardConfigVendor.mk
+
+# Wlan
+WIFI_HIDL_FEATURE_AWARE := true
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+QC_WIFI_HIDL_FEATURE_DUAL_AP := true
