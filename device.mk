@@ -208,7 +208,8 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     K7Frameworks \
     K7Settings \
-    K7SystemUI
+    K7SystemUI \
+    K7WifiOverlay
 
 # Platform
 TARGET_BOARD_PLATFORM := bengal
