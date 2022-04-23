@@ -192,6 +192,7 @@ TARGET_USES_INTERACTION_BOOST := true
 
 # QC common
 include $(COMMON_PATH)/BoardConfigQcom.mk
+OVERRIDE_QCOM_HARDWARE_VARIANT := sm8250-common
 TARGET_SEPOLICY_DIR := bengal
 
 # Releasetools
