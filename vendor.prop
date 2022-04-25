@@ -278,10 +278,6 @@ persist.timed.enable=true
 vendor.usb.diag.func.name=diag
 vendor.usb.use_ffs_mtp=0
 
-# WFD settings
-persist.debug.wfd.enable=1
-persist.sys.wfd.virtual=0
-
 # Wi-Fi
 wifi.aware.interface=wifi-aware0
 
