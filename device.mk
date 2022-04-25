@@ -407,7 +407,8 @@ TARGET_BOARD_PLATFORM := bengal
 TARGET_COMMON_QTI_COMPONENTS := \
     av \
     usb \
-    vibrator
+    vibrator \
+    wfd
 
 # QMI
 PRODUCT_PACKAGES += \
@@ -559,8 +560,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # WiFi Display
 PRODUCT_PACKAGES += \
-    libnl \
+    libqdMetaData \
+    libqdMetaData.system \
+    libdisplayconfig \
+    libdisplayconfig.vendor \
     libwfdaac_vendor
-
-#PRODUCT_BOOT_JARS += \
-    WfdCommon
