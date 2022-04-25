@@ -314,7 +314,6 @@ PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0-service
 
 PRODUCT_PACKAGES += \
-    libavservices_minijail \
     libavservices_minijail.vendor \
     libavservices_minijail_vendor
 
@@ -406,6 +405,7 @@ $(call inherit-product, device/qcom/common/common.mk)
 TARGET_BOARD_PLATFORM := bengal
 
 TARGET_COMMON_QTI_COMPONENTS := \
+    av \
     vibrator
 
 # QMI
