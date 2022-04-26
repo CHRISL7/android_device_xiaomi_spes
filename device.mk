@@ -354,6 +354,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     audio \
     av \
     gps \
+    overlay \
     vibrator \
     wfd
 
