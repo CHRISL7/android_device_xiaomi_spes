@@ -397,6 +397,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     av \
     gps \
     init \
+    overlay \
     usb \
     vibrator \
     wfd
@@ -522,7 +523,7 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     vendor.qti.hardware.wifi.hostapd@1.2.vendor \
     vendor.qti.hardware.wifi.supplicant@2.2.vendor \
-    WifiResCommon \
+    SpesWifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
 
