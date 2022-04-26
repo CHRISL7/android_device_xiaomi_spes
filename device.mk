@@ -287,10 +287,12 @@ PRODUCT_PACKAGES += \
     Tag
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
-
-PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_PACKAGES += \
+    SpesFrameworksOverlay \
+    SpesSettingsOverlay \
+    SpesSystemUIOverlay \
+    SpesTelephonyOverlay \
+    SpesWifiOverlay
 
 # Public libraries
 PRODUCT_COPY_FILES += \
@@ -375,9 +377,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_EXTRA_VNDK_VERSIONS := 30
 
 # WiFi
-PRODUCT_PACKAGES += \
-    WifiResCommon
-
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/hostapd.accept:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.accept \
     $(LOCAL_PATH)/configs/wifi/hostapd.deny:$(TARGET_COPY_OUT_VENDOR)/etc/hostapd/hostapd.deny \
