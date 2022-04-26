@@ -42,8 +42,6 @@ PRODUCT_PACKAGES += \
 
 # AOSP Permissions
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
     frameworks/native/data/etc/android.hardware.camera.front.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.front.xml \
     frameworks/native/data/etc/android.hardware.camera.full.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.full.xml \
@@ -91,32 +89,27 @@ PRODUCT_PACKAGES += \
 
 # ANT+
 PRODUCT_PACKAGES += \
-    AntHalService-Soong \
     com.dsi.ant@1.0.vendor
 
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.service \
-    android.hardware.bluetooth.audio@2.0-impl \
     android.hardware.soundtrigger@2.3-impl
 
-PRODUCT_PACKAGES += \
-    audio.bluetooth.default
-
-# Audio configs
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
-PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
-
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0.vendor \
+    android.hardware.bluetooth.audio@2.0-impl \
+    com.qualcomm.qti.bluetooth_audio@1.0.vendor \
     vendor.qti.hardware.bluetooth_audio@2.0.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
+
+PRODUCT_PACKAGES += \
+    audio.bluetooth.default \
+    libbluetooth_audio_session
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
@@ -153,10 +146,6 @@ PRODUCT_COPY_FILES += \
 # Configs File System
 PRODUCT_PACKAGES += \
     fs_config_files
-
-# Component overrides
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
 
 # Consumer IR
 PRODUCT_PACKAGES += \
@@ -231,11 +220,6 @@ PRODUCT_PACKAGES += \
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.spes
-
-# FM
-PRODUCT_PACKAGES += \
-    FM2 \
-    qcom.fmradio
 
 # GPS
 LOC_HIDL_VERSION := 4.0
@@ -340,6 +324,7 @@ TARGET_BOARD_PLATFORM := bengal
 TARGET_COMMON_QTI_COMPONENTS := \
     audio \
     av \
+    bt \
     gps \
     overlay \
     perf \

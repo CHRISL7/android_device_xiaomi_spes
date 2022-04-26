@@ -1,4 +1,7 @@
 # Bluetooth
+persist.vendor.btstack.enable.lpa=true
+persist.vendor.btstack.enable.twsplus=true
+persist.vendor.bt.a2dp.aac_whitelist=false
 vendor.bluetooth.soc=cherokee
 
 # Camera
