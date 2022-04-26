@@ -365,10 +365,12 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_ODM)/etc/permissions/sku_k7tn/com.android.nfc_extras.xml
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay
-
-PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_PACKAGES += \
+    SpesFrameworksOverlay \
+    SpesSettingsOverlay \
+    SpesSystemUIOverlay \
+    SpesTelephonyOverlay \
+    SpesWifiOverlay
 
 # Perf
 PRODUCT_PACKAGES += \
@@ -524,7 +526,6 @@ PRODUCT_PACKAGES += \
     libwifi-hal-qcom \
     vendor.qti.hardware.wifi.hostapd@1.2.vendor \
     vendor.qti.hardware.wifi.supplicant@2.2.vendor \
-    SpesWifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
 
