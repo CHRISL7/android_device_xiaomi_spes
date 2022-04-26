@@ -194,10 +194,6 @@ ro.nfc.port=I2C
 # NTP
 persist.backup.ntpServer=0.pool.ntp.org
 
-# PERF
-ro.vendor.extension_library=libqti-perfd-client.so
-ro.vendor.perf-hal.ver=2.2
-
 # Radio
 DEVICE_PROVISIONED=1
 persist.radio.multisim.config=dsds
@@ -220,9 +216,6 @@ rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.telephony.default_network=22,20
 ro.vendor.se.type=HCE,UICC
 telephony.lteOnCdmaDevice=1
-
-# QSPM
-ro.vendor.qspm.enable=true
 
 # RmNet data
 persist.data.df.agg.dl_pkt=10
