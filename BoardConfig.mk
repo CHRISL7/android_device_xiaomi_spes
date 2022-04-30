@@ -114,6 +114,7 @@ BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)-kernel/dtbo.img
     
 BOARD_KERNEL_CMDLINE += \
     androidboot.console=ttyMSM0 \
+    androidboot.init_fatal_reboot_target=recovery \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
     androidboot.usbcontroller=4e00000.dwc3 \
