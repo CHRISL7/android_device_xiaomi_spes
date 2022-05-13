@@ -725,4 +725,7 @@
 
     <!-- Pocket Lock -->
     <bool name="config_pocketModeSupported">false</bool>
+
+    <!-- Whether the display blanks itself when transitioning from a doze to a non-doze state -->
+    <bool name="config_displayBlanksAfterDoze">true</bool>
 </resources>
