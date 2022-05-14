@@ -720,4 +720,7 @@
         <item>150</item> <!--item>sensorRadius</item-->
     </array>
 
+    <!-- Whether device has a big physical display cutout -->
+    <bool name="config_physicalDisplayCutout">true</bool>
+
 </resources>
