@@ -389,6 +389,7 @@ TARGET_COMMON_QTI_COMPONENTS := \
     adreno \
     av \
     gps \
+    init \
     usb \
     vibrator \
     wfd
@@ -409,24 +410,18 @@ PRODUCT_PACKAGES += \
 
 # Rootdir
 PRODUCT_PACKAGES += \
-    init.class_main.sh \
-    init.mdm.sh \
-    init.qcom.post_boot.sh \
-    init.qcom.sh \
     init.qti.dcvs.sh
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
     fstab.qcom_ramdisk \
-    init.qcom.rc \
     init.recovery.qcom.rc \
     init.spes.rc \
     init.spes.perf.rc \
     init.stnfc.rc \
     init.target.rc \
-    init.xiaomi.rc \
-    ueventd.qcom.rc
-
+    init.xiaomi.rc
+    
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@2.1-service.xiaomi_bengal-multihal \
