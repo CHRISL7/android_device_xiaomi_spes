@@ -669,4 +669,14 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <!-- Codec2 HAl service -->
+   <hal format="hidl" optional="true">
+       <name>android.hardware.media.c2</name>
+       <version>1.0</version>
+       <interface>
+           <name>IComponentStore</name>
+           <instance>default</instance>
+           <instance>software</instance>
+       </interface>
+   </hal>
 </compatibility-matrix>
