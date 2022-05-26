@@ -160,8 +160,6 @@ vendor/lib/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
 vendor/lib/btaudio_offload_if.so
 vendor/lib/libbluetooth_audio_session_qti.so
 vendor/lib/libbluetooth_audio_session_qti_2_1.so
-vendor/lib/libsoc_helper.so
-vendor/lib/libsoc_helper_jni.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/hw/audio.bluetooth_qti.default.so
@@ -172,8 +170,6 @@ vendor/lib64/hw/vendor.qti.hardware.btconfigstore@2.0-impl.so
 vendor/lib64/btaudio_offload_if.so
 vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/libbluetooth_audio_session_qti_2_1.so
-vendor/lib64/libsoc_helper.so
-vendor/lib64/libsoc_helper_jni.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 
@@ -647,7 +643,6 @@ vendor/lib64/libsdm-diag.so
 vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libtinyxml2_1.so
-vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
 
 # Display postprocessing
 vendor/bin/hw/vendor.display.color@1.0-service
@@ -709,9 +704,8 @@ vendor/lib64/libStDrvInt.so
 vendor/lib64/libtzdrmgenprov.so
 vendor/lib64/vendor.qti.hardware.qseecom@1.0.so
 
-# Embedded Secure Element power manager
-vendor/lib64/vendor.qti.esepowermanager@1.0.so
-vendor/lib64/vendor.qti.esepowermanager@1.1.so
+# DRM - from LA.UM.9.12.r1-13300-SMxx50.QSSI12.0
+vendor/etc/gpfspath_oem_config.xml
 
 # Fingerprint
 vendor/lib64/com.fingerprints.extension@1.0.so
@@ -772,7 +766,6 @@ vendor/lib64/liblowi_client.so
 vendor/lib64/liblowi_wifihal.so
 vendor/lib64/libminksocket.so
 vendor/lib64/libqcc_file_agent.so
-vendor/lib64/libqdma_file_agent.so
 vendor/lib64/libslimclient.so
 vendor/lib64/libsynergy_loc_api.so
 vendor/lib64/libxtadapter.so
@@ -1026,6 +1019,14 @@ vendor/lib64/libOmxSwVencMpeg4.so
 vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libswvdec.so
 
+# MMI - from LA.UM.9.12.r1-13300-SMxx50.QSSI12.0
+vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
+vendor/bin/mmid
+vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc
+vendor/etc/permissions/vendor.qti.hardware.factory.xml
+vendor/lib64/vendor.qti.hardware.factory@1.0.so
+vendor/lib64/vendor.qti.hardware.factory@1.1.so
+
 # Mlipay
 vendor/bin/mlipayd@1.1
 vendor/etc/init/vendor.xiaomi.hardware.mlipay@1.1-service.rc
@@ -1153,6 +1154,19 @@ vendor/lib64/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
 vendor/lib64/vendor.qti.hardware.qccvndhal@1.0-halimpl.so
 vendor/lib64/vendor.qti.hardware.qccvndhal@1.0.so
+
+# QCV - from LA.UM.9.12.r1-13300-SMxx50.QSSI12.0
+vendor/bin/init.qti.qcv.sh
+vendor/etc/init/init.qti.qcv.rc
+vendor/lib/libsoc_helper.so
+vendor/lib/libsoc_helper_jni.so
+vendor/lib64/libsoc_helper.so
+vendor/lib64/libsoc_helper_jni.so
+
+# QDMA - from LA.UM.9.12.r1-13300-SMxx50.QSSI12.0
+vendor/bin/qcc-trd
+vendor/etc/init/init.qdmastats.rc
+vendor/lib64/libqdma_file_agent.so
 
 # QMI
 etc/permissions/privapp-permissions-qti.xml
@@ -1476,9 +1490,28 @@ vendor/etc/sensors/proto/sns_ultra_violet.proto
 vendor/etc/sensors/proto/sns_wrist_tilt_gesture.proto
 vendor/etc/sensors/sns_reg_config
 
-# Secure element
-vendor/lib/android.hardware.secure_element@1.0-impl.so
+# Secure element - from LA.UM.9.12.r1-13300-SMxx50.QSSI12.0
+vendor/bin/hw/vendor.qti.esepowermanager@1.1-service
+vendor/bin/hw/vendor.qti.secure_element@1.2-service
+vendor/etc/init/vendor.qti.esepowermanager@1.1-service.rc
+vendor/etc/init/vendor.qti.secure_element@1.2-service.rc
+vendor/lib64/hw/vendor.qti.esepowermanager@1.1-impl.so
 vendor/lib64/android.hardware.secure_element@1.0-impl.so
+vendor/lib64/vendor.qti.esepowermanager@1.0.so
+vendor/lib64/vendor.qti.esepowermanager@1.1.so
+vendor/lib64/se_nq_extn_client.so
+vendor/lib64/ls_nq_client.so
+vendor/lib64/jcos_nq_client.so
+
+# SecureMSM  - from LA.UM.9.12.r1-13300-SMxx50.QSSI12.0
+vendor/bin/hdcp1prov
+vendor/bin/hdcp2p2prov
+vendor/lib64/libbase64.so
+vendor/lib64/libhdcpsrm.so
+vendor/lib64/libhdcp1prov.so
+vendor/lib64/libhdcp2p2prov.so
+vendor/lib64/liboemcrypto.so
+vendor/lib64/libspl.so
 
 # Snapdragon Computer Vision Engine
 vendor/lib/libfastcvdsp_stub.so
@@ -1497,6 +1530,10 @@ vendor/lib64/libscveObjectSegmentation.so
 vendor/lib64/libscveObjectSegmentation_stub.so
 vendor/lib64/libscveObjectTracker.so
 vendor/lib64/libscveObjectTracker_stub.so
+
+# Snapdragon Computer Vision Engine - from LA.UM.9.12.r1-13300-SMxx50.QSSI12.0
+vendor/lib64/vendor.qti.hardware.scve.objecttracker@1.0.so
+vendor/lib64/vendor.qti.hardware.scve.panorama@1.0.so
 
 # Soter
 -app/SoterService/SoterService.apk
@@ -1526,6 +1563,10 @@ vendor/etc/thermald-devices.conf
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
 
+# TLOC - from LA.UM.9.12.r1-13300-SMxx50.QSSI12.0
+vendor/bin/tloc_daemon
+vendor/etc/init/tloc_daemon.rc
+
 # Time services
 -vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
@@ -1546,16 +1587,30 @@ vendor/lib64/libQTEEConnector_listener.so
 vendor/lib64/libQTEEConnector_vendor.so
 vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
 
-# Trusted User Interface
+# Trusted User Interface - from LA.UM.9.12.r1-13300-SMxx50.QSSI12.0
 vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
 vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
+vendor/lib64/libsecureui_svcsock.so
+vendor/lib64/libsi.so
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
+vendor/lib64/vendor.qti.hardware.trustedui@1.0.so
+vendor/lib64/vendor.qti.hardware.trustedui@1.1.so
+vendor/lib64/vendor.qti.hardware.trustedui@1.2.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 
-# VPP
-vendor/lib/vendor.qti.hardware.vpp@1.1.so
-vendor/lib/vendor.qti.hardware.vpp@1.2.so
+# VPP - from LA.UM.9.12.r1-13300-SMxx50.QSSI12.0
+vendor/bin/vppservice
+vendor/etc/configstore/vpp.configstore.xml
+vendor/etc/init/vppservice.rc
+vendor/lib64/libvppclient.so
+vendor/lib64/libvpphcp.so
+vendor/lib64/libvpphvx.so
+vendor/lib64/libvppimmotion.so
+vendor/lib64/libvpplibrary.so
+vendor/lib64/libvpptestutils.so
 vendor/lib64/vendor.qti.hardware.vpp@1.1.so
 vendor/lib64/vendor.qti.hardware.vpp@1.2.so
+vendor/lib64/vendor.qti.hardware.vpp@1.3.so
 
 # Widevine DRM
 vendor/bin/hw/android.hardware.drm@1.3-service.widevine
