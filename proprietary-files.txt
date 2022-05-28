@@ -1595,6 +1595,12 @@ vendor/bin/cnss-daemon
 vendor/etc/wifi/aoa_cldb_falcon.bin
 vendor/etc/wifi/aoa_cldb_swl14.bin
 
+# Wifi firmware
+vendor/firmware/wigig/wigig.ini
+vendor/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
+vendor/firmware/wlan/qca_cld/wlan_mac.bin
+vendor/firmware/wlanmdsp.otaupdate
+
 # WiFi Display
 vendor/bin/wfdhdcphalservice
 vendor/bin/wfdvndservice
