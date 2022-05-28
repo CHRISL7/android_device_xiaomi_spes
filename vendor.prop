@@ -110,33 +110,7 @@ ro.crypto.volume.filenames_mode=aes-256-cts
 # CNE
 persist.cne.feature=1
 
-# Display calib
-ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
-ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg
-ro.vendor.display.sensortype=2
-ro.vendor.display.svi=1
-vendor.display.svi.config=1
-vendor.display.svi.config_path=/vendor/etc/SVIConfig.xml
-
-# Display color mode
-persist.sys.sf.color_saturation=1.0
-persist.sys.sf.native_mode=2
-persist.sys.sf.color_mode=0
-
-# DPM
-persist.dpm.feature=1
-persist.vendor.dpmhalservice.enable=1
-
-# DRM
-drm.service.enabled=true
-
-# FP
-ro.hardware.fp.sideCap=true
-
-# FRP
-ro.frp.pst=/dev/block/bootdevice/by-name/frp
-
-# Graphics/Display
+# Display
 debug.egl.hw=0
 debug.mdpcomp.logs=0
 debug.sf.enable_advanced_sf_phase_offset=1
@@ -147,9 +121,6 @@ debug.sf.high_fps_late_sf_phase_offset_ns=-5000000
 debug.sf.hw=0
 debug.sf.latch_unsignaled=1
 persist.demo.hdmirotationlock=false
-ro.hardware.egl=adreno
-ro.hardware.vulkan=adreno
-ro.opengles.version=196610
 vendor.display.comp_mask=0
 vendor.display.disable_excl_rect=0
 vendor.display.disable_excl_rect_partial_fb=1
@@ -167,7 +138,38 @@ vendor.display.use_layer_ext=0
 vendor.display.use_smooth_motion=0
 vendor.gralloc.disable_ubwc=0
 vendor.display.disable_offline_rotator=1
+
+# Display calib
+ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
+ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg
+ro.vendor.display.sensortype=2
+ro.vendor.display.svi=1
+vendor.display.svi.config=1
+vendor.display.svi.config_path=/vendor/etc/SVIConfig.xml
+
+# Display color mode
+persist.sys.sf.color_saturation=1.0
+persist.sys.sf.native_mode=2
+persist.sys.sf.color_mode=0
 vendor.display.qdcm.mode_combine=1
+
+# DPM
+persist.dpm.feature=1
+persist.vendor.dpmhalservice.enable=1
+
+# DRM
+drm.service.enabled=true
+
+# FP
+ro.hardware.fp.sideCap=true
+
+# FRP
+ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# Graphics
+ro.hardware.egl=adreno
+ro.hardware.vulkan=adreno
+ro.opengles.version=196610
 
 # Media Codecs
 debug.stagefright.ccodec=1
