@@ -254,7 +254,7 @@ LOC_HIDL_VERSION := 4.0
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.spes
+    android.hardware.biometrics.fingerprint@2.3-service.xiaomi
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -421,6 +421,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fstab.qcom \
     fstab.qcom_ramdisk \
+    init.fingerprint.rc \
     init.spes.rc \
     init.spes.perf.rc \
     init.stnfc.rc \

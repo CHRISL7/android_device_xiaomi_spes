@@ -145,8 +145,8 @@ persist.vendor.dpmhalservice.enable=1
 # DRM
 drm.service.enabled=true
 
-# FP
-ro.hardware.fp.sideCap=true
+# Fingerprint
+persist.vendor.qfp=false
 
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
