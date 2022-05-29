@@ -388,7 +388,8 @@ PRODUCT_COPY_FILES += \
 
 # QC common
 $(call inherit-product, device/qcom/common/common.mk)
-TARGET_BOARD_PLATFORM := bengal
+BENGAL := bengal
+TARGET_BOARD_PLATFORM := $(BENGAL)
 DEVICE := spes
 
 TARGET_COMMON_QTI_COMPONENTS := \
