@@ -161,11 +161,6 @@ ro.hardware.fp.sideCap=true
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
 
-# Graphics
-ro.hardware.egl=adreno
-ro.hardware.vulkan=adreno
-ro.opengles.version=196610
-
 # Media Codecs
 debug.stagefright.ccodec=1
 debug.stagefright.omx_default_rank=0
