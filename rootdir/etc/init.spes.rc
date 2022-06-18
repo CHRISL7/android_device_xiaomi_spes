@@ -61,6 +61,9 @@ on post-fs-data
     chmod 0644 /mnt/vendor/dsp/fastrpc_shell_3
     mount none /mnt/vendor/dsp/fastrpc_shell_3 /vendor/dsp/cdsp/fastrpc_shell_3 bind
     
+    # Spesn NFC configs
+    mkdir /data/vendor/nfc 0770 nfc nfc
+
 service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     override
     class hal
@@ -72,3 +75,14 @@ service vendor.audio-hal /vendor/bin/hw/android.hardware.audio.service
     task_profiles ProcessCapacityHigh HighPerformance
     socket audio_hw_socket seqpacket 0666 system system
     onrestart restart audioserver
+    
+    # Spes NFC configs
+service nqnfc_2_0_hal_service /vendor/bin/hw/vendor.nxp.hardware.nfc@2.0-service
+    override
+    class hal
+    user nfc
+    group nfc
+    disabled
+
+on boot && property:ro.boot.product.hardware.sku=spesn
+    enable nqnfc_2_0_hal_service
