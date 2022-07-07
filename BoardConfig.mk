@@ -60,18 +60,19 @@ TARGET_NO_BOOTLOADER := true
 
 # Build Hacks
 BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_DUP_SYSPROP := true
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
+BUILD_BROKEN_PREBUILT_ELF_FILES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
-BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
+BUILD_BROKEN_ENFORCE_SYSPROP_OWNER := true
 
 # Camera
 TARGET_CAMERA_BOOTTIME_TIMESTAMP := true
 
 # Display
 TARGET_USES_ION := true
-
-# DTBO image
-BOARD_KERNEL_SEPARATED_DTBO := true
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
@@ -101,12 +102,12 @@ BOARD_TAGS_OFFSET        := 0x00000100
 
 BOARD_BOOT_HEADER_VERSION := 3
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
-BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
+BOARD_MKBOOTIMG_ARGS += --dtb $(DEVICE_PATH)-kernel/dtb.img
 
-BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)/prebuilt/dtbo.img
-TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
-TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
-
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_SEPARATED_DTBO := true
+BOARD_PREBUILT_DTBOIMAGE := $(DEVICE_PATH)-kernel/dtbo.img
+    
 BOARD_KERNEL_CMDLINE += \
     androidboot.console=ttyMSM0 \
     androidboot.hardware=qcom \
@@ -119,12 +120,6 @@ BOARD_KERNEL_CMDLINE += \
     msm_rtb.filter=0x237 \
     service_locator.enable=1 \
     swiotlb=2048
-
-TARGET_FORCE_PREBUILT_KERNEL := true
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CONFIG := vendor/bengal_defconfig
-TARGET_KERNEL_HEADERS := kernel/xiaomi/spes
-TARGET_KERNEL_SOURCE := kernel/xiaomi/spes
 
 # Media
 TARGET_DISABLED_UBWC := true
@@ -169,8 +164,6 @@ TARGET_TAP_TO_WAKE_NODE := "/proc/tp_gesture"
 TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
 
 # QC tree common
-include $(COMMON_PATH)/BoardConfigQcom.mk
-OVERRIDE_QCOM_HARDWARE_VARIANT := sm8250-common
 TARGET_SEPOLICY_DIR := bengal
 
 # Releasetools
