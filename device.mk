@@ -434,6 +434,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Overlays
 PRODUCT_PACKAGES += \
+    AOSPASpesFrameworksOverlay \
     SpesFrameworksOverlay \
     SpesSettingsOverlay \
     SpesSystemUIOverlay \
