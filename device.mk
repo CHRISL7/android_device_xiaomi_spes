@@ -314,7 +314,7 @@ LOC_HIDL_VERSION := 4.0
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.xiaomi
+    android.hardware.biometrics.fingerprint@2.1-service.spes
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -523,8 +523,7 @@ PRODUCT_PACKAGES += \
     init.stnfc.rc \
     init.target.rc \
     ueventd.xiaomi.rc \
-    init.xiaomi.rc \
-    init.xiaomi.fingerprint.rc
+    init.xiaomi.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/init.recovery.qcom.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.qcom.rc \
