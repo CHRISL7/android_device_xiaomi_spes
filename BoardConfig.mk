@@ -74,6 +74,9 @@ TARGET_CAMERA_BOOTTIME_TIMESTAMP := true
 # Display
 TARGET_USES_ION := true
 
+# DT2W
+TARGET_TAP_TO_WAKE_NODE := "/proc/tp_gesture"
+
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
@@ -158,10 +161,6 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_COPY_OUT_PRODUCT := product
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
-
-# Power
-TARGET_TAP_TO_WAKE_NODE := "/proc/tp_gesture"
-TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
 
 # QC tree common
 TARGET_SEPOLICY_DIR := bengal
