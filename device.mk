@@ -597,12 +597,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/bin/init.qcom.usb.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.qcom.usb.sh
 
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.vendor.usb.config=mtp,adb \
-    ro.adb.secure=0 \
-    ro.secure=0 \
-    ro.debuggable=1 \
-    ro.control_privapp_permissions=log
-
+    persist.vendor.usb.config=mtp,adb
+    
 # Vendor service manager
 PRODUCT_PACKAGES += \
     vndservicemanager
