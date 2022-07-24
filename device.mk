@@ -13,9 +13,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
-# Enable Virtual A/B
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
-
 # Inherit from vendor if exists
 $(call inherit-product-if-exists, vendor/xiaomi/spes/spes-vendor.mk)
 
@@ -27,6 +24,8 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_SHIPPING_API_LEVEL := 30
 
 # A/B
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
@@ -564,7 +563,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/qcom/bootctrl \
     hardware/xiaomi
 
 # Storage.xml moment
