@@ -243,7 +243,6 @@ PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor
     
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.surface_flinger.frame_rate_multiple_threshold=90 \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
     ro.surface_flinger.max_virtual_display_dimension=4096
 
