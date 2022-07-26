@@ -71,9 +71,6 @@ BUILD_BROKEN_ENFORCE_SYSPROP_OWNER := true
 # Camera
 TARGET_CAMERA_BOOTTIME_TIMESTAMP := true
 
-# Display
-TARGET_USES_ION := true
-
 # DT2W
 TARGET_TAP_TO_WAKE_NODE := "/proc/tp_gesture"
 
