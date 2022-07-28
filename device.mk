@@ -507,6 +507,10 @@ PRODUCT_VENDOR_PROPERTIES += \
     sys.vendor.shutdown.waittime=500 \
     telephony.lteOnCdmaDevice=1
 
+# Recovery
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.flash.recovery=0
+
 # Rootdir
 PRODUCT_PACKAGES += \
     init.qti.dcvs.sh \
