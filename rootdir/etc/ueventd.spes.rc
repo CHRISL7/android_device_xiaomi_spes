@@ -40,3 +40,6 @@
 
 # silead fingerprint
 /dev/silead_fp            0660   system   system
+
+# Fingerprint
+/dev/goodix_fp            0660   system   system
