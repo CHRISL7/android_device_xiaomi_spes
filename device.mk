@@ -126,7 +126,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.1.vendor \
     android.hardware.bluetooth.audio@2.1-impl \
     com.qualcomm.qti.bluetooth_audio@1.0.vendor \
     vendor.qti.hardware.bluetooth_audio@2.1.vendor \
@@ -407,10 +406,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
     persist.vendor.data.mode=concurrent \
     ro.vendor.use_data_netmgrd=true
 
-# Network
-PRODUCT_PACKAGES += \
-    android.system.net.netd@1.1.vendor
-
 # Neural Networks
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor
@@ -487,12 +482,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Radio
 PRODUCT_PACKAGES += \
     libwpa_client
-
-PRODUCT_PACKAGES += \
-    android.hardware.radio@1.5.vendor \
-    android.hardware.radio.config@1.3.vendor \
-    android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.secure_element@1.2.vendor
 
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.vendor.radio.report_codec=1 \
