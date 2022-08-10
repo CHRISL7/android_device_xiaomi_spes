@@ -13,8 +13,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
-# Inherit from vendor if exists
-$(call inherit-product-if-exists, vendor/xiaomi/spes/spes-vendor.mk)
+# Inherit from vendor
+$(call inherit-product, vendor/xiaomi/spes/spes-vendor.mk)
 
 # Enable Dynamic partition
 PRODUCT_BUILD_SUPER_PARTITION := false
