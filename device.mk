@@ -374,10 +374,6 @@ PRODUCT_VENDOR_KERNEL_HEADERS += $(LOCAL_PATH)-kernel/kernel-headers
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.1.vendor
 
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light-service.xiaomi
-    
 # Media
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     media.aac_51_output_enabled=true \
