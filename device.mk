@@ -355,7 +355,7 @@ PRODUCT_PACKAGES += \
 
 # NFC
 PRODUCT_PACKAGES += \
-    android.hardware.nfc-service.st \
+    android.hardware.nfc@1.2-service.st \
     com.android.nfc_extras \
     libchrome.vendor \
     nfc_nci.st21nfc.default \
