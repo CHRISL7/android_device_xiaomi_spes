@@ -200,15 +200,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.set_touch_timer_ms=4000 \
     ro.surface_flinger.use_content_detection_for_refresh_rate=true
 
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    debug.sf.use_phase_offsets_as_durations=1 \
-    debug.sf.late.sf.duration=10500000 \
-    debug.sf.late.app.duration=20500000 \
-    debug.sf.early.sf.duration=16000000 \
-    debug.sf.early.app.duration=16500000 \
-    debug.sf.earlyGl.sf.duration=13500000 \
-    debug.sf.earlyGl.app.duration=21000000
-
 PRODUCT_VENDOR_PROPERTIES += \
     debug.sf.disable_backpressure=0 \
     debug.sf.enable_gl_backpressure=1 \
