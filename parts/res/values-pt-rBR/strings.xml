@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <!-- Dirac settings: Equalizer presets -->
+    <string name="dirac_preset_live">Ao vivo</string>
+    <string name="dirac_preset_balanced">Balanceado</string>
+    <string name="dirac_preset_bass_reduction">Redução de graves</string>
+    <string name="dirac_preset_treble_reduction">Redução de agudos</string>
+    <string name="dirac_preset_soft_bass">Graves suaves</string>
+    <string name="dirac_preset_soft_treble">Agudos suaves</string>
+
+    <!-- Scene Selection -->
+    <string name="music_headset_scenario_select">Selecionar cenário</string>
+    <string name="music_headset_scenario_intelligent">Inteligente</string>
+    <string name="music_headset_scenario_music">Música</string>
+    <string name="music_headset_scenario_video">Vídeo</string>
+    <string name="music_headset_scenario_vocal">Vocal</string>
+
+</resources>
