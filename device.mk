@@ -108,6 +108,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Bluetooth
 PRODUCT_VENDOR_PROPERTIES += \
+    bluetooth.device.default_name=Redmi Note 11 \
     persist.sys.fflag.override.settings_bluetooth_hearing_aid=true \
     persist.vendor.bluetooth.modem_nv_support=true \
     persist.vendor.bt.a2dp.mac_whitelist=false \
