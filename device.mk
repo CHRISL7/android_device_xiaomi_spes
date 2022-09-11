@@ -482,7 +482,6 @@ PRODUCT_PACKAGES += \
     fstab.zram \
     init.spes.rc \
     init.spes.perf.rc \
-    init.stnfc.rc \
     init.target.rc \
     ueventd.xiaomi.rc \
     init.xiaomi.rc \
