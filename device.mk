@@ -108,7 +108,6 @@ PRODUCT_VENDOR_PROPERTIES += \
 
 # Bluetooth
 PRODUCT_VENDOR_PROPERTIES += \
-    persist.sys.fflag.override.settings_bluetooth_hearing_aid=true \
     persist.vendor.bluetooth.modem_nv_support=true \
     persist.vendor.bt.a2dp.mac_whitelist=false \
     persist.vendor.qcom.bluetooth.a2dp_mcast_test.enabled=false \
