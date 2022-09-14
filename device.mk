@@ -68,6 +68,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
+PRODUCT_ODM_PROPERTIES += \
+    aaudio.mmap_policy=1 \
+    ro.vendor.audio.sdk.fluencetype=fluence \
+    vendor.audio.adm.buffering.ms=6 \
+    vendor.audio.feature.dynamic_ecns.enable=false \
+    vendor.audio.feature.spkr_prot.enable=false \
+    vendor.audio.hal.output.suspend.supported=false \
+    vendor.audio.offload.track.enable=false
+
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.config.media_vol_default=8 \
     ro.config.media_vol_steps=25 \
