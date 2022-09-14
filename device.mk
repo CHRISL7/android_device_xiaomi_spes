@@ -74,10 +74,6 @@ PRODUCT_SYSTEM_PROPERTIES += \
     ro.config.vc_call_vol_default=9 \
     ro.config.vc_call_vol_steps=11
 
-PRODUCT_SYSTEM_PROPERTIES += \
-    persist.audio.button_jack.profile=volume \
-    persist.audio.button_jack.switch=0
-    
 PRODUCT_VENDOR_PROPERTIES += \
     ro.audio.monitorRotation=true \
     ro.vendor.audio.afe.record=true \
