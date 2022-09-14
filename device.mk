@@ -69,11 +69,15 @@ PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
 
 PRODUCT_SYSTEM_PROPERTIES += \
-    persist.audio.button_jack.profile=volume \
-    persist.audio.button_jack.switch=0 \
-    ro.config.media_vol_default=10 \
-    ro.config.vc_call_vol_steps=11 
+    ro.config.media_vol_default=8 \
+    ro.config.media_vol_steps=25 \
+    ro.config.vc_call_vol_default=9 \
+    ro.config.vc_call_vol_steps=11
 
+PRODUCT_SYSTEM_PROPERTIES += \
+    persist.audio.button_jack.profile=volume \
+    persist.audio.button_jack.switch=0
+    
 PRODUCT_VENDOR_PROPERTIES += \
     ro.audio.monitorRotation=true \
     ro.vendor.audio.afe.record=true \
