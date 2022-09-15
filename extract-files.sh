@@ -1,4 +1,4 @@
-#!/bin/bash
+-k#!/bin/bash
 #
 # Copyright (C) 2022 The LineageOS Project
 #
