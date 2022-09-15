@@ -273,13 +273,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_SYSTEM_PROPERTIES += \
     persist.sys.fuse.passthrough.enable=true
 
-# Fwk detect
-PRODUCT_ODM_PROPERTIES += \
-    ro.vendor.qti.va_odm.support=1
-
-PRODUCT_SYSTEM_PROPERTIES += \
-    ro.vendor.qti.va_aosp.support=1
-  
 # GPS
 LOC_HIDL_VERSION := 4.0
 
