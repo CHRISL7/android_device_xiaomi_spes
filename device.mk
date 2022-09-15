@@ -352,9 +352,6 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
     mmp.enable.3g2=true \
     persist.mm.enable.prefetch=true
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/media/media_codecs_c2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_c2.xml
-    
 # Netflix
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.netflix.channel=004ee050-1a17-11e9-bb61-6f1da27fb55b
