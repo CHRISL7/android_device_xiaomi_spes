@@ -437,9 +437,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.qcomsysd.enabled=1
 
 # Radio
-PRODUCT_PACKAGES += \
-    libwpa_client
-
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.vendor.radio.report_codec=1 \
     persist.vendor.radio.vdp_on_ims_cap=1 \
