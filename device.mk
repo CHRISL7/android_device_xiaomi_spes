@@ -65,9 +65,6 @@ BOARD_SUPPORTS_OPENSOURCE_STHAL := true
 PRODUCT_PACKAGES += \
     android.hardware.audio.service
 
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/configs/audio/,$(TARGET_COPY_OUT_VENDOR)/etc)
-
 PRODUCT_ODM_PROPERTIES += \
     aaudio.mmap_policy=1 \
     ro.vendor.audio.sdk.fluencetype=fluence \

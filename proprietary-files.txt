@@ -85,19 +85,30 @@ vendor/lib64/vendor.qti.hardware.alarm@1.0.so|8ac5e1e7ec700083a4bff481f8ebd9e362
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so|ecdf9f24262c49031c470b14a27d3f99d2b47ff4
 
 # Audio Configs
+vendor/etc/audio/audio_policy_configuration.xml
 vendor/etc/audio_diag.cfg
 vendor/etc/audio_effects.conf
+vendor/etc/audio_effects.xml
+vendor/etc/audio_io_policy.conf
+vendor/etc/audio_platform_info_intcodec.xml
 vendor/etc/audio_platform_info_qrd.xml
 vendor/etc/audio_platform_info_scubaidp.xml
 vendor/etc/audio_platform_info_scubaqrd.xml
 vendor/etc/audio_platform_info.xml
+vendor/etc/audio_policy_configuration.xml
+vendor/etc/audio_policy_volumes.xml
+vendor/etc/bluetooth_qti_audio_policy_configuration.xml
+vendor/etc/default_volume_tables.xml
 vendor/etc/mixer_paths_idp_india.xml
 vendor/etc/mixer_paths_qrd.xml
 vendor/etc/mixer_paths_scubaidp.xml
 vendor/etc/mixer_paths_scubaqrd.xml
 vendor/etc/mixer_paths.xml
+vendor/etc/r_submix_audio_policy_configuration.xml
 vendor/etc/sound_trigger_mixer_paths.xml
 vendor/etc/sound_trigger_platform_info.xml
+vendor/etc/ultrasound.wav
+vendor/etc/usb_audio_policy_configuration.xml
 
 # Audio Dirac - from xiaomi
 lib/libDiracAPI_SHARED.so:vendor/lib/libDiracAPI_SHARED.so
