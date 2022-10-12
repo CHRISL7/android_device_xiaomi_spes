@@ -77,7 +77,7 @@ PRODUCT_ODM_PROPERTIES += \
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.config.media_vol_default=8 \
     ro.config.media_vol_steps=25 \
-    ro.config.vc_call_vol_default=9 \
+    ro.config.vc_call_vol_default=10 \
     ro.config.vc_call_vol_steps=11
 
 PRODUCT_VENDOR_PROPERTIES += \
@@ -105,11 +105,23 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.audio.soundtrigger=sva
 
 # Bluetooth
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    bt.max.hfpclient.connections=1 \
+    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
+    persist.vendor.bt.aac_frm_ctl.enabled=true \
+    persist.vendor.btstack.enable.splita2dp=true \
+    persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
+    ro.bluetooth.emb_wp_mode=false \
+    ro.bluetooth.wipower=false \
+    vendor.bluetooth.soc=cherokee
+
+#PRODUCT_SYSTEM_EXT_PROPERTIES += \
+#    persist.vendor.btstack.enable.lpa=true \
+#    persist.vendor.btstack.enable.twsplus=true
+
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.bluetooth.modem_nv_support=true \
-    persist.vendor.bt.a2dp.mac_whitelist=false \
     persist.vendor.qcom.bluetooth.a2dp_mcast_test.enabled=false \
-    persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true \
     persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=true \
     persist.vendor.qcom.bluetooth.enable.splita2dp=true \
     persist.vendor.qcom.bluetooth.scram.enabled=false \
@@ -138,9 +150,6 @@ PRODUCT_PACKAGES += \
     libstdc++.vendor
 
 PRODUCT_PACKAGES += \
-    Snap
-
-PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
@@ -149,11 +158,11 @@ PRODUCT_PACKAGES += \
     
 PRODUCT_SYSTEM_PROPERTIES += \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera \
-    vendor.camera.aux.packagelist.ext=com.android.camera \
+    vendor.camera.aux.packagelist.ext=org.codeaurora.snapcam,com.android.camera \
     persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera
 
 PRODUCT_VENDOR_PROPERTIES += \
-    camera.disable_zsl_mode=1 \
+    camera.disable_zsl_mode=1
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -166,10 +175,8 @@ PRODUCT_PACKAGES += \
     libsuspend
     
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.charger.enable_suspend=true
-
-PRODUCT_SYSTEM_PROPERTIES += \
     persist.vendor.quick.charge=1 \
+    ro.charger.enable_suspend=true \
     ro.charger.disable_init_blank=true
 
 # Consumer IR
@@ -194,7 +201,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/parts/privapp-permissions-parts.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-parts.xml
 
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
+PRODUCT_VENDOR_PROPERTIES += \
     ro.audio.soundfx.dirac=true \
     persist.audio.dirac.speaker=true \
     persist.dirac.acs.controller=qem \
@@ -215,7 +222,9 @@ PRODUCT_VENDOR_PROPERTIES += \
     
 # Display
 PRODUCT_PACKAGES += \
-    android.frameworks.displayservice@1.0.vendor
+    android.frameworks.displayservice@1.0.vendor \
+    libdisplayconfig.qti \
+    disable_configstore
     
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.max_frame_buffer_acquired_buffers=3 \
@@ -225,16 +234,11 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.set_touch_timer_ms=800 \
     ro.surface_flinger.use_content_detection_for_refresh_rate=true
 
-PRODUCT_VENDOR_PROPERTIES += \
-    debug.sf.disable_backpressure=0 \
-    debug.sf.enable_gl_backpressure=1 \
-    vendor.display.idle_time=0 \
-    vendor.display.idle_time_inactive=0
-
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.sys.sf.color_mode=9
 
 PRODUCT_VENDOR_PROPERTIES += \
+    debug.sf.disable_backpressure=1 \
     persist.sys.sf.native_mode=2 \
     ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg \
     ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg \
@@ -245,14 +249,9 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.display.svi.config=1 \
     vendor.display.svi.config_path=/vendor/etc/SVIConfig.xml
 
-PRODUCT_PACKAGES += \
-    libdisplayconfig.qti \
-    disable_configstore
-
 # DPM
 PRODUCT_VENDOR_PROPERTIES += \
     persist.dpm.feature=1 \
-    persist.vendor.dpm.feature=11 \
     persist.vendor.dpmhalservice.enable=1
 
 # DRM
@@ -274,6 +273,10 @@ PRODUCT_SYSTEM_PROPERTIES += \
 
 # GPS
 LOC_HIDL_VERSION := 4.0
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
+    $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -358,10 +361,8 @@ PRODUCT_VENDOR_PROPERTIES += \
     vendor.netflix.bsp_rev=Q6115-31409-1
 
 # Netmgr
-PRODUCT_SYSTEM_PROPERTIES += \
-    persist.data.netmgrd.qos.enable=true \
-    persist.vendor.data.mode=concurrent \
-    ro.vendor.use_data_netmgrd=true
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    persist.data.netmgrd.qos.enable=true
 
 # Neural Networks
 PRODUCT_PACKAGES += \
@@ -435,11 +436,6 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.qcomsysd.enabled=1
 
 # Radio
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.vendor.radio.report_codec=1 \
-    persist.vendor.radio.vdp_on_ims_cap=1 \
-    persist.vendor.qti.telephony.vt_cam_interface=2
-
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.data.iwlan.enable=true \
     persist.vendor.radio.add_power_save=1 \
@@ -456,8 +452,7 @@ PRODUCT_VENDOR_PROPERTIES += \
     rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so \
     ro.vendor.radio.features_common=3 \
     ro.vendor.se.type=HCE,UICC \
-    sys.vendor.shutdown.waittime=500 \
-    telephony.lteOnCdmaDevice=1
+    sys.vendor.shutdown.waittime=500
 
 # Recovery
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -474,10 +469,8 @@ PRODUCT_PACKAGES += \
     fstab.zram \
     init.spes.rc \
     init.spes.perf.rc \
-    init.target.rc \
-    ueventd.xiaomi.rc \
-    init.xiaomi.rc \
     init.xiaomi.fingerprint.rc \
+    init.xiaomi.rc \
     ueventd.spes.rc
 
 PRODUCT_COPY_FILES += \
@@ -557,13 +550,15 @@ PRODUCT_COPY_FILES += \
 
 # WiFi
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+    $(LOCAL_PATH)/configs/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/WCNSS_qcom_cfg.ini
 
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    config.disable_rtt=true
+    
 # WiFi Display
 PRODUCT_PACKAGES += \
     libwfdaac_vendor:32
-    
+
 # WLAN
 PRODUCT_VENDOR_PROPERTIES += \
     persist.vendor.data.iwlan.enable=true \
