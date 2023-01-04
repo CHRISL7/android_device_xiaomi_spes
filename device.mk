@@ -128,6 +128,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
+    libnotifyaudiohal:64 \
     sensors.xiaomi
 
 PRODUCT_COPY_FILES += \
