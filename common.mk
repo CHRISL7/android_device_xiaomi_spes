@@ -107,6 +107,12 @@ PRODUCT_VENDOR_PROPERTIES += \
     ro.vendor.audio.soundtrigger=sva
 
 # Bluetooth
+TARGET_USE_QTI_BT_STACK := false
+
+PRODUCT_COPY_FILES += \
+    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml
+
 PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.hardware.power.idle_cur_ma=7 \
     bluetooth.hardware.power.operating_voltage_mv=3700 \
@@ -153,8 +159,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
 PRODUCT_SYSTEM_PROPERTIES += \
-    vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera \
-    vendor.camera.aux.packagelist.ext=org.codeaurora.snapcam,com.android.camera \
     persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera
 
 PRODUCT_VENDOR_PROPERTIES += \
@@ -207,6 +211,8 @@ PRODUCT_VENDOR_PROPERTIES += \
     persist.dirac.acs.ignore_error=1
 
 # Display
+TARGET_USE_QCOM_OFFSET := true
+
 PRODUCT_PACKAGES += \
     android.frameworks.displayservice@1.0.vendor \
     libdisplayconfig.qti \
@@ -361,7 +367,7 @@ PRODUCT_COPY_FILES += \
 # Public libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
-    
+
 # Rootdir / Init files
 PRODUCT_PACKAGES += \
     init.qti.dcvs.sh \
@@ -381,8 +387,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init/init.recovery.qcom.rc:$(TARGET_COPY_OUT_RECOVERY)/root/init.recovery.qcom.rc
 
-# QC common
+# qcom/common tree
+$(call inherit-product, device/qcom/common/common.mk)
 TARGET_BOARD_PLATFORM := bengal
+TARGET_USE_BENGAL_HALS := true
 
 TARGET_COMMON_QTI_COMPONENTS := \
     audio \
@@ -458,6 +466,7 @@ PRODUCT_VENDOR_PROPERTIES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    hardware/qcom-caf/bootctrl \
     hardware/xiaomi
 
 # Storage.xml moment
