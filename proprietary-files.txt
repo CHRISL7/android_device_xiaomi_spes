@@ -570,9 +570,6 @@ vendor/etc/lm/prekill/prekill_6GB.data|dbf72257628f2da4979726b046377673cb33d6e8
 vendor/etc/lm/PreKillFeature.xml|6e6e7bc843c3632e8ddedf6299bd9f7d2e0878ef
 vendor/etc/powerhint.xml|ee7f1c655491a11013b15106005f436d99e59093
 
-# Power-off charging daemon - from MIUI
-system/bin/charger:system/bin/chargeonlymode|91344ce6fb24343537c2f63ca5bdf6aded86a858
-
 # Sensors - from MIUI
 vendor/bin/init.qcom.sensors.sh|454c6de8c65b9ad1c41f063544871a4ba0665689
 vendor/etc/elliptic_sensor.xml|2a38626bb26d9def04d2a34167440c2ee1a41bc1
