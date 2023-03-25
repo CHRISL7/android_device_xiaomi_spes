@@ -76,6 +76,9 @@ void vendor_load_properties() {
     // Set hardware revision
     property_override("ro.boot.hardware.revision", GetProperty("ro.boot.hwversion", "").c_str());
 
+    // Override "release-keys" for build tags
+    property_override("ro.build.tags", "release-keys");
+
     // Set dalvik heap configuration
     std::string heapstartsize, heapgrowthlimit, heapsize, heapminfree,
 			heapmaxfree, heaptargetutilization;
