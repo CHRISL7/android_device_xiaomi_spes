@@ -13,9 +13,21 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     private static final String TAG = "RefreshRateParts";
     @Override
     public void onReceive(final Context context, Intent intent) {
-        if (!intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED)) {
-            return;
+        Log.i(TAG, "Received intent: " + intent.getAction());
+
+        switch (intent.getAction()) {
+            case Intent.ACTION_LOCKED_BOOT_COMPLETED:
+                onLockedBootCompleted(context);
+                break;
+            case Intent.ACTION_BOOT_COMPLETED:
+                onBootCompleted(context);
+                break;
         }
+
+        private static void onBootCompleted(Context context) {
+        // Data is now accessible (user has just unlocked).
         RefreshUtils.initialize(context);
-   }
+        }
+    }
+
 }
