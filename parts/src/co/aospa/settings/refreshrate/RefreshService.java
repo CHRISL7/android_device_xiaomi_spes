@@ -37,7 +37,8 @@ public class RefreshService extends Service {
     private static final String TAG = "RefreshService";
     private static final boolean DEBUG = true;
 
-    private String mPreviousApp;
+    private boolean mScreenOn = true;
+    private String mCurrentApp = ""
     private RefreshUtils mRefreshUtils;
     private IActivityTaskManager mActivityTaskManager;
     private final TaskStackListener mTaskListener = new TaskStackListener() {
@@ -49,9 +50,9 @@ public class RefreshService extends Service {
                     return;
                 }
                 String foregroundApp = info.topActivity.getPackageName();
-                if (!foregroundApp.equals(mPreviousApp)) {
-                    mRefreshUtils.setRefreshRate(foregroundApp);
-                    mPreviousApp = foregroundApp;
+                if (!foregroundApp.equals(mCurrentApp)) {
+                    mCurrentApp = foregroundApp;
+                    setRefreshRate();
                 }
             } catch (Exception e) {}
             }
@@ -60,8 +61,16 @@ public class RefreshService extends Service {
     private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            mPreviousApp = "";
-            mRefreshUtils.setDefaultRefreshRate(context);
+            switch (intent.getAction()) {
+                case Intent.ACTION_SCREEN_OFF:
+                    mScreenOn = false;
+                    setRefreshRate();
+                    break;
+                case Intent.ACTION_SCREEN_ON:
+                    mScreenOn = true;
+                    setRefreshRate();
+                    break;
+            }
         }
     };
 
@@ -107,7 +116,16 @@ public class RefreshService extends Service {
     private void registerReceiver() {
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_OFF);
+        filter.addAction(Intent.ACTION_SCREEN_ON);
         this.registerReceiver(mIntentReceiver, filter);
+    }
+
+    private void setRefreshRate() {
+        if (mScreenOn) {
+            mRefreshUtils.setRefreshRate(mCurrentApp);
+        } else {
+            mRefreshUtils.setRefreshRate();
+        }
     }
 
     private void unregisterReceiver() {
