@@ -5,9 +5,14 @@ cc_library_shared {
     ],
     shared_libs: [
         "android.hardware.audio@6.0",
+        "android.hardware.audio.common@6.0",
+        "libbase",
+        "libbinder",
+        "libcutils",
         "libhidlbase",
         "liblog",
         "libutils",
+        "libxml2",
     ],
     vendor: true,
 }
